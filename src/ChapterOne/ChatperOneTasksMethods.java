@@ -5,12 +5,12 @@ import Utils.WindowUtils;
 import java.math.BigInteger;
 import java.util.Optional;
 
-public class TasksMethods {
+public class ChatperOneTasksMethods {
 
 
     public static Optional<String> returnUpperText() {
         return Optional.ofNullable(WindowUtils.getTextWithWindow("Wpisz tekst, a ja zamienie litery na wielkie"))
-                .map(TasksMethods::returnUpperTextPrep);
+                .map(ChatperOneTasksMethods::returnUpperTextPrep);
     }
 
     public static String returnUpperTextPrep(String textToUpper) {
@@ -19,7 +19,7 @@ public class TasksMethods {
 
     public static Optional<String> binaryRepresentation() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system dwójkowy"))
-                .map(TasksMethods::binaryRepresentationCalc);
+                .map(ChatperOneTasksMethods::binaryRepresentationCalc);
     }
 
     public static String binaryRepresentationCalc(Integer numberToConvert) {
@@ -43,11 +43,11 @@ public class TasksMethods {
 
     public static Optional<String> octalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system ósemkowy"))
-                .map(TasksMethods::octalRepresentationOfDecimalValueCalc);
+                .map(ChatperOneTasksMethods::octalRepresentationOfDecimalValueCalc);
     }
 
     public static String octalRepresentationOfDecimalValueCalc(Integer decimalValue) {
-        String octalRepresentationInString = "";
+        String octalRepresentationInString;
         octalRepresentationInString = String.valueOf(decimalValue % 8);
         decimalValue = decimalValue - decimalValue % 8;
 
@@ -56,7 +56,7 @@ public class TasksMethods {
         while (decimalValue != 0) {
             decimalValue = decimalValue / 8;
             if (decimalValue % 8 != 0) {
-                octalRepresentationInStringBuilder.insert(0, String.valueOf(decimalValue % 8));
+                octalRepresentationInStringBuilder.insert(0, (decimalValue % 8));
                 if (decimalValue - decimalValue % 8 > 0)
                     decimalValue = decimalValue - (decimalValue % 8); // odjecie
             } else if (decimalValue != 0 && decimalValue % 8 == 0) {
@@ -69,7 +69,7 @@ public class TasksMethods {
 
     public static Optional<String> hexaDecimalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system szesnastkowy"))
-                .map(TasksMethods::hexaDecimalRepresentationOfDecimalValueCalc);
+                .map(ChatperOneTasksMethods::hexaDecimalRepresentationOfDecimalValueCalc);
     }
 
     public static String hexaDecimalRepresentationOfDecimalValueCalc(Integer decimalValue) {
@@ -80,7 +80,7 @@ public class TasksMethods {
         while (decimalValue != 0) {
             decimalValue = decimalValue / 16;
             if (decimalValue % 16 != 0) {
-                hexaValueAsString.insert(0, String.valueOf(decimalValue % 16) + ",");
+                hexaValueAsString.insert(0, (decimalValue % 16) + ",");
                 if (decimalValue - decimalValue % 16 > 0)
                     decimalValue = decimalValue - (decimalValue % 16);
             } else if (decimalValue != 0 && decimalValue % 16 == 0) {
@@ -100,7 +100,7 @@ public class TasksMethods {
 
     public static Optional<BigInteger> factorial() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe do silni"))
-                .map(TasksMethods::factorialCalc);
+                .map(ChatperOneTasksMethods::factorialCalc);
     }
 
     private static BigInteger factorialCalc(Integer numberProvidedByUser) {
@@ -116,7 +116,7 @@ public class TasksMethods {
 
     public static Optional<Integer> sumOddNumbers() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbę a ja zsumuje wszelkie wynikające z niej mniejsze nieparzyste liczby"))
-                .map(TasksMethods::sumOddNumbersCalc);
+                .map(ChatperOneTasksMethods::sumOddNumbersCalc);
     }
 
     public static Integer sumOddNumbersCalc(Integer endingNumber) {
