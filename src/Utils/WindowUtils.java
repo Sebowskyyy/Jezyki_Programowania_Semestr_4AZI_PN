@@ -28,23 +28,19 @@ public class WindowUtils {
     }
 
     public static Integer getIntWithWindow(String windowText) {
-        int numberToReturn = 0;
-        String textGotFromWindow = "";
-        boolean isValueParsed = false;
-        while (!isValueParsed && textGotFromWindow != null) {
-            textGotFromWindow = JOptionPane.showInputDialog(windowText);
-            if (textGotFromWindow == null) {
-                return null;
-            }
+        Integer result = null;
+        while (result == null) {
+            String input = JOptionPane.showInputDialog(windowText);
             try {
-                numberToReturn = Integer.parseInt(textGotFromWindow);
-                isValueParsed = true;
-            } catch (NumberFormatException ex) {
-                if (textGotFromWindow != null) {
-                    WindowUtils.showText("Wprowadzony tekst nie jest liczbą lub cos innego poszlo nie tak :( Spróbuj ponownie z inna liczba ");
+                if (input != null) {
+                    result = Integer.parseInt(input);
+                } else {
+                    break;
                 }
+            } catch (NumberFormatException ex) {
+                WindowUtils.showText("Wprowadzony tekst nie jest liczbą. Spróbuj ponownie.");
             }
         }
-        return numberToReturn;
+        return result;
     }
 }
