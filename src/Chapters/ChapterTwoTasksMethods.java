@@ -1,4 +1,4 @@
-package ChapterOne;
+package Chapters;
 
 public class ChapterTwoTasksMethods {
     // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,

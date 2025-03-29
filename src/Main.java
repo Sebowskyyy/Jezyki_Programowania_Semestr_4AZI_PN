@@ -1,6 +1,4 @@
-import ChapterOne.ChapterTwoTasksMethods;
-import ChapterOne.ChatperOneTasksMethods;
-import Utils.WindowUtils;
+import Chapters.ChapterTwoTasksMethods;
 
 public class Main {
 

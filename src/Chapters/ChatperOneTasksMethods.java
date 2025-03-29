@@ -1,4 +1,4 @@
-package ChapterOne;
+package Chapters;
 
 import Utils.WindowUtils;
 
