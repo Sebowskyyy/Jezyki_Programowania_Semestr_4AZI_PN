@@ -73,7 +73,10 @@ public class ChapterTwoTasksMethods {
         }
 
         Boolean Equals(Rational numToCompare) {
-            return false;
+
+this.simplify();
+numToCompare.simplify();
+            return this == numToCompare;
         }
 
         private int numerator;
