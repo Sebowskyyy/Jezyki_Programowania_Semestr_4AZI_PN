@@ -1,8 +1,6 @@
 package Chapters;
 
 public class ChapterTwoTasksMethods {
-    // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-    // then press Enter. You can now see whitespace characters in your code.
 
     public static class Rational {
         public Rational(int numerator, int denominator) {
