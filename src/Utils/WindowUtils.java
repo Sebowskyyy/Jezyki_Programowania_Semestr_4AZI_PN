@@ -43,4 +43,17 @@ public class WindowUtils {
         }
         return result;
     }
+
+
+    public static int getInt(){
+        String input = JOptionPane.showInputDialog("Podaj liczbę całkowitą:");
+        int number = Integer.parseInt(input);
+        try {
+
+            JOptionPane.showMessageDialog(null, "Wpisałeś liczbę: " + number);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "To nie jest poprawna liczba całkowita!", "Błąd", JOptionPane.ERROR_MESSAGE);
+        }
+        return number;
+    }
 }

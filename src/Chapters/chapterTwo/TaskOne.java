@@ -1,9 +1,12 @@
-package Chapters;
+package Chapters.chapterTwo;
 
-public class ChapterTwoTasksMethods {
+public class TaskOne {
 
     public static class Rational {
         public Rational(int numerator, int denominator) {
+            if (denominator == 0) {
+                throw new IllegalArgumentException("Mianownik nie może być zerem!");
+            }
             this.numerator = numerator;
             this.denominator = denominator;
             System.out.println("This rational number is " + this.numerator + "/" + this.denominator);
@@ -24,12 +27,12 @@ public class ChapterTwoTasksMethods {
         }
 
         public Rational subtract(Rational subtrahend) {
-            return new Rational(this.numerator * subtrahend.denominator - this.denominator * subtrahend.denominator,
+            return new Rational(this.numerator * subtrahend.denominator - this.denominator * subtrahend.numerator,
                     this.denominator * subtrahend.denominator);
         }
 
         public Rational divide(Rational divider) {
-            return new Rational(this.numerator * divider.denominator, this.denominator * divider.denominator);
+            return new Rational(this.numerator * divider.denominator, this.denominator * divider.numerator);
         }
 
         public void simplify() {
@@ -50,7 +53,7 @@ public class ChapterTwoTasksMethods {
                     divider--;
 
                 }
-                if (this.numerator == 0){
+                if (this.numerator == 0) {
                     this.denominator = 1;
                 }
                 this.numerator = this.numerator + this.denominator * StashNumber;
@@ -72,11 +75,31 @@ public class ChapterTwoTasksMethods {
             return this.numerator + "/" + this.denominator;
         }
 
-        Boolean Equals(Rational numToCompare) {
+        public Boolean isEqual(Rational numToCompare) {
+            this.simplify();
+            numToCompare.simplify();
+            return this.toString().equals(numToCompare.toString());
+        }
 
-this.simplify();
-numToCompare.simplify();
-            return this == numToCompare;
+        public int compareTo(Rational arg) {
+            int comparisonResult;
+            this.simplify();
+            arg.simplify();
+            Rational tempRational = new Rational(this.numerator, this.denominator);
+            if (this.isEqual(arg)) {
+                comparisonResult = 0;
+            } else {
+                tempRational.numerator = tempRational.numerator * arg.denominator;
+                tempRational.denominator = tempRational.numerator * arg.denominator;
+                arg.numerator = tempRational.denominator * arg.numerator;
+                arg.denominator = tempRational.denominator * arg.denominator;
+                if (tempRational.numerator > arg.numerator) {
+                    comparisonResult = 1;
+                } else {
+                    comparisonResult = -1;
+                }
+            }
+            return comparisonResult;
         }
 
         private int numerator;

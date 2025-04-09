@@ -1,16 +1,16 @@
-package Chapters;
+package Chapters.chapterOne;
 
 import Utils.WindowUtils;
 
 import java.math.BigInteger;
 import java.util.Optional;
 
-public class ChatperOneTasksMethods {
+public class AllTasks {
 
 
     public static Optional<String> returnUpperText() {
         return Optional.ofNullable(WindowUtils.getTextWithWindow("Wpisz tekst, a ja zamienie litery na wielkie"))
-                .map(ChatperOneTasksMethods::returnUpperTextPrep);
+                .map(AllTasks::returnUpperTextPrep);
     }
 
     public static String returnUpperTextPrep(String textToUpper) {
@@ -19,7 +19,7 @@ public class ChatperOneTasksMethods {
 
     public static Optional<String> binaryRepresentation() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system dwójkowy"))
-                .map(ChatperOneTasksMethods::binaryRepresentationCalc);
+                .map(AllTasks::binaryRepresentationCalc);
     }
 
     public static String binaryRepresentationCalc(Integer numberToConvert) {
@@ -43,7 +43,7 @@ public class ChatperOneTasksMethods {
 
     public static Optional<String> octalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system ósemkowy"))
-                .map(ChatperOneTasksMethods::octalRepresentationOfDecimalValueCalc);
+                .map(AllTasks::octalRepresentationOfDecimalValueCalc);
     }
 
     public static String octalRepresentationOfDecimalValueCalc(Integer decimalValue) {
@@ -69,7 +69,7 @@ public class ChatperOneTasksMethods {
 
     public static Optional<String> hexaDecimalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system szesnastkowy"))
-                .map(ChatperOneTasksMethods::hexaDecimalRepresentationOfDecimalValueCalc);
+                .map(AllTasks::hexaDecimalRepresentationOfDecimalValueCalc);
     }
 
     public static String hexaDecimalRepresentationOfDecimalValueCalc(Integer decimalValue) {
@@ -100,7 +100,7 @@ public class ChatperOneTasksMethods {
 
     public static Optional<BigInteger> factorial() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe do silni"))
-                .map(ChatperOneTasksMethods::factorialCalc);
+                .map(AllTasks::factorialCalc);
     }
 
     private static BigInteger factorialCalc(Integer numberProvidedByUser) {
@@ -116,7 +116,7 @@ public class ChatperOneTasksMethods {
 
     public static Optional<Integer> sumOddNumbers() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbę a ja zsumuje wszelkie wynikające z niej mniejsze nieparzyste liczby"))
-                .map(ChatperOneTasksMethods::sumOddNumbersCalc);
+                .map(AllTasks::sumOddNumbersCalc);
     }
 
     public static Integer sumOddNumbersCalc(Integer endingNumber) {
@@ -132,4 +132,6 @@ public class ChatperOneTasksMethods {
         }
         return sum;
     }
+
+
 }
