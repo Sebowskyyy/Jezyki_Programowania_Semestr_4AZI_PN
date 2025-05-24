@@ -1,6 +1,6 @@
 package Chapters.chapterTwo;
 
-public class TaskTwo {
+public class C2TaskTwo {
     public static class QuadraticEquation {
         public QuadraticEquation(int a, int b, int c){
             setA(a);

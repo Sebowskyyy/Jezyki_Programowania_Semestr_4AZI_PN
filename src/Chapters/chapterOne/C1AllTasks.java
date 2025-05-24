@@ -5,12 +5,12 @@ import Utils.WindowUtils;
 import java.math.BigInteger;
 import java.util.Optional;
 
-public class AllTasks {
+public class C1AllTasks {
 
 
     public static Optional<String> returnUpperText() {
         return Optional.ofNullable(WindowUtils.getTextWithWindow("Wpisz tekst, a ja zamienie litery na wielkie"))
-                .map(AllTasks::returnUpperTextPrep);
+                .map(C1AllTasks::returnUpperTextPrep);
     }
 
     public static String returnUpperTextPrep(String textToUpper) {
@@ -19,7 +19,7 @@ public class AllTasks {
 
     public static Optional<String> binaryRepresentation() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system dwójkowy"))
-                .map(AllTasks::binaryRepresentationCalc);
+                .map(C1AllTasks::binaryRepresentationCalc);
     }
 
     public static String binaryRepresentationCalc(Integer numberToConvert) {
@@ -43,7 +43,7 @@ public class AllTasks {
 
     public static Optional<String> octalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system ósemkowy"))
-                .map(AllTasks::octalRepresentationOfDecimalValueCalc);
+                .map(C1AllTasks::octalRepresentationOfDecimalValueCalc);
     }
 
     public static String octalRepresentationOfDecimalValueCalc(Integer decimalValue) {
@@ -69,7 +69,7 @@ public class AllTasks {
 
     public static Optional<String> hexaDecimalRepresentationOfDecimalValue() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe a zamienie na system szesnastkowy"))
-                .map(AllTasks::hexaDecimalRepresentationOfDecimalValueCalc);
+                .map(C1AllTasks::hexaDecimalRepresentationOfDecimalValueCalc);
     }
 
     public static String hexaDecimalRepresentationOfDecimalValueCalc(Integer decimalValue) {
@@ -100,7 +100,7 @@ public class AllTasks {
 
     public static Optional<BigInteger> factorial() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbe do silni"))
-                .map(AllTasks::factorialCalc);
+                .map(C1AllTasks::factorialCalc);
     }
 
     private static BigInteger factorialCalc(Integer numberProvidedByUser) {
@@ -116,7 +116,7 @@ public class AllTasks {
 
     public static Optional<Integer> sumOddNumbers() {
         return Optional.ofNullable(WindowUtils.getIntWithWindow("Podaj liczbę a ja zsumuje wszelkie wynikające z niej mniejsze nieparzyste liczby"))
-                .map(AllTasks::sumOddNumbersCalc);
+                .map(C1AllTasks::sumOddNumbersCalc);
     }
 
     public static Integer sumOddNumbersCalc(Integer endingNumber) {

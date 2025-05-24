@@ -1,6 +1,6 @@
 package Chapters.chapterTwo;
 
-public class TaskThree {
+public class C2TaskThree {
     public abstract static class Wielomian{
        public abstract void wypiszMiejscaZerowe();
        }

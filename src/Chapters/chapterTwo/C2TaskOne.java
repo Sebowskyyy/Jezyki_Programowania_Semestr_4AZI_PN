@@ -1,6 +1,6 @@
 package Chapters.chapterTwo;
 
-public class TaskOne {
+public class C2TaskOne {
 
     public static class Rational {
         public Rational(int numerator, int denominator) {
@@ -75,18 +75,19 @@ public class TaskOne {
             return this.numerator + "/" + this.denominator;
         }
 
-        public Boolean isEqual(Rational numToCompare) {
+        public boolean equals (Rational numToCompare) {
             this.simplify();
             numToCompare.simplify();
             return this.toString().equals(numToCompare.toString());
         }
+
 
         public int compareTo(Rational arg) {
             int comparisonResult;
             this.simplify();
             arg.simplify();
             Rational tempRational = new Rational(this.numerator, this.denominator);
-            if (this.isEqual(arg)) {
+            if (this.equals(arg)) {
                 comparisonResult = 0;
             } else {
                 tempRational.numerator = tempRational.numerator * arg.denominator;
