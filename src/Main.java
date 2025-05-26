@@ -1,8 +1,11 @@
+import java.io.File;
+
 import Chapters.chapterOne.C1AllTasks;
 import Chapters.chapterThree.Kolejka;
 import Chapters.chapterTwo.C2TaskOne;
 import Chapters.chapterTwo.C2TaskThree;
 import Chapters.chapterTwo.C2TaskTwo;
+import Chapters.chatperFour.C4T2;
 import Utils.WindowUtils;
 
 public class Main {
@@ -56,5 +59,8 @@ public class Main {
         } catch (Kolejka.BladPrzezNiedomiar exception) {
             System.out.println("Bład niedopełnienia kolejki");
         }*/
+        C4T2.makeFile("doZzipowania");
+        C4T2.zip("doZzipowania","poZipie");
+        C4T2.unZip("poZipie.gz","poUnzipie");
     }
 }
